@@ -1,0 +1,142 @@
+
+@mixin nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:  $base-padding $base-padding * 2;
+}
+
+.navbar {
+  @include nav;
+}
+
+.navbar-fixed {
+  @include nav;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 20px;
+}
+
+.navbar-toggler {
+  background: transparent;
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  aspect-ratio: 1;
+  border: 0;
+  color: #fff;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 0;
+  display: none; /* Initially hidden on larger screens */
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links li:last-child {
+  margin-right: 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ffc107;
+  }
+  
+  &:active,
+  &:focus {
+    border-bottom: solid;
+  }
+}
+
+.nav-sidebar {
+  position: fixed;
+  top: 0;
+  right: -270px; /* Initially hidden */
+  height: 100%;
+  width: 270px;
+  background: rgba( 0, 0, 0, 0.6 );
+  backdrop-filter: blur(1.5rem);
+  padding-top: 60px;
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.nav-sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-sidebar-links li {
+  padding: 10px 15px;
+}
+
+.nav-sidebar-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+  display: block;
+
+  &:hover {
+    color: #ffc107;
+  }
+  
+  &:active,
+  &:focus {
+    border-bottom: solid;
+  }
+}
+  
+  
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block; /* Display on smaller screens */
+  }
+
+  .navbar-links {
+    display: none; /* Initially hide on smaller screens */
+  }
+
+  .auth-buttons {
+    display: none; /* Initially hide on smaller screens */
+  }
+
+  .nav-sidebar[data-visble="true"] {
+    right: 0; /* Show sidebar on smaller screens */
+  }
+}

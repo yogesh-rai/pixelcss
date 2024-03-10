@@ -1,0 +1,40 @@
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .form {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        display: block;
+        font-size: small;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-weight: 500;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+    }
+      
+}

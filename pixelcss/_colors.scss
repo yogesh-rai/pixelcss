@@ -1,0 +1,87 @@
+
+@each $key, $value in $colors {
+    .text-#{$key} {
+        color: $value !important;
+    }
+
+    .text-hover-#{$key} {
+        &:hover {
+            color: $value !important;
+        }
+    }
+
+    .bg-#{$key} {
+        background-color: $value !important;
+    }
+
+    .bg-hover-#{$key} {
+        &:hover {
+            background-color: $value !important;
+        }
+    }
+
+    .bc-#{$key} {
+        border-color: $value !important;
+    }
+
+    // color variations
+    @if ($value != white) {
+
+        // for lightness
+        @for $i from 1 through 9 {
+            .text-#{$key}-light-#{$i} {
+                color: mix(white, $value, $i * 10%) !important;
+            }
+
+            .text-hover-#{$key}-light-#{$i} {
+                &:hover {
+                    color: mix(white, $value, $i * 10%) !important;
+                }
+            }
+        
+            .bg-#{$key}-light-#{$i} {
+                background-color: mix(white, $value, $i * 10%) !important;
+            }
+
+            .bg-hover-#{$key}-light-#{$i} {
+                &:hover {
+                    background-color: mix(white, $value, $i * 10%) !important;
+                }
+            }
+
+            .bc-#{$key}-light-#{$i} {
+                border-color: mix(white, $value, $i * 10%) !important;
+            }
+        }
+    }
+
+    @if ($value != black) {
+
+        // for darkness
+        @for $i from 1 through 9 {
+            .text-#{$key}-dark-#{$i} {
+                color: mix(black, $value, $i * 10%) !important;
+            }
+
+            .text-hover-#{$key}-dark-#{$i} {
+                &:hover {
+                    color: mix(black, $value, $i * 10%) !important;
+                }
+            }
+        
+            .bg-#{$key}-dark-#{$i} {
+                background-color: mix(black, $value, $i * 10%) !important;
+            }
+
+            .bg-hover-#{$key}-dark-#{$i} {
+                &:hover {
+                    background-color: mix(black, $value, $i * 10%) !important;
+                }
+            }
+
+            .bc-#{$key}-dark-#{$i} {
+                border-color: mix(black, $value, $i * 10%) !important;
+            }
+        }
+    }
+}

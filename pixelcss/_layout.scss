@@ -1,0 +1,230 @@
+
+// for grid layout
+
+$grid-columns: 12;
+
+$grid-properties: (
+    "grid-gap": (
+        "prefix": "gap",
+        "values": (
+            "0": 0,
+            "1": 10px,
+            "2": 20px,
+            "3": 30px,
+            "4": 40px,
+            "5": 50px,
+        )
+    ),
+    "grid-auto-flow": (
+        "prefix": "grid-flow",
+        "values": (
+            "row": row,
+            "col": column,
+        )
+    ),
+);
+
+@each $utility, $properties in $grid-properties {
+    $prefix: map-get($properties, "prefix");
+    $values: map-get($properties, "values");
+    
+    @each $key, $value in $values {
+      .#{$prefix}-#{$key} {
+        #{$utility}: $value;
+      }
+    }
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    @include sm {
+        max-width: 640px;
+    }
+    
+    @include md {
+        max-width: 768px; 
+    }
+    
+    @include lg {
+        max-width: 1024px;
+    }
+    
+    @include xl {
+        max-width: 1280px; 
+    }
+}
+
+// .row {
+//     display: flex;
+//     flex-flow: row wrap;
+// }
+
+.default-grid {
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, 1fr); 
+    
+    @include sm {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    @include md {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+    
+    @include lg {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+    
+    @include xl {
+        grid-template-columns: repeat(5, 1fr); 
+    }
+}
+  
+@include xs {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-xs {
+            grid-template-columns: repeat($i, 1fr);
+        }
+
+        .row-#{$i}-xs {
+            grid-template-rows: repeat($i, minmax(0, 1fr));
+        }
+    }
+}
+
+@include sm {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-sm {
+            grid-template-columns: repeat($i, 1fr);
+        }
+
+        .row-#{$i}-sm {
+            grid-template-rows: repeat($i, minmax(0, 1fr));
+        }
+    }
+}
+
+@include md {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-md {
+            grid-template-columns: repeat($i, 1fr);
+        }
+
+        .row-#{$i}-md {
+            grid-template-rows: repeat($i, minmax(0, 1fr));
+        }
+    }
+}
+
+@include lg {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-lg {
+            grid-template-columns: repeat($i, 1fr);
+        }
+
+        .row-#{$i}-lg {
+            grid-template-rows: repeat($i, minmax(0, 1fr));
+        }
+    }
+}
+
+@include xl {
+    @for $i from 1 through $grid-columns {
+        .col-#{$i}-xl {
+            grid-template-columns: repeat($i, 1fr);
+        }
+
+        .row-#{$i}-xl {
+            grid-template-rows: repeat($i, minmax(0, 1fr));
+        }
+    }
+}
+
+// for flex layout
+
+$flex-properties: (
+    "flex-direction": (
+        "prefix": "fd",
+        "values": (
+            "row": row,
+            "col": column,
+            "row-rev": row-reverse,
+            "col-rev": column-reverse,
+        )
+    ),
+    "flex-wrap": (
+        "prefix": "fw",
+        "values": (
+            "wrap": wrap,
+            "nowrap": nowrap,
+        )
+    ),
+    "flex-grow": (
+        "prefix": "fg",
+        "values": (
+            "0": 0,
+            "1": 1,
+        )
+    ),
+    "justify-content": (
+        "prefix": "jc",
+        "values": (
+            "start": flex-start,
+            "center": center,
+            "end": flex-end,
+            "between": space-between,
+            "around": space-around,
+            "evenly": space-evenly,
+        )
+    ),
+    "justify-items": (
+        "prefix": "ji",
+        "values": (
+            "start": start,
+            "end": end,
+            "center": center,
+        )
+    ),
+    "align-content": (
+        "prefix": "ac",
+        "values": (
+            "start": flex-start,
+            "center": center,
+            "end": flex-end,
+            "between": space-between,
+            "around": space-around,
+            "evenly": space-evenly,
+        )
+    ),
+    "align-items": (
+        "prefix": "ai",
+        "values": (
+            "start": flex-start,
+            "end": flex-end,
+            "center": center,
+        )
+    ),
+    "flex-flow": (
+        "prefix": "f",
+        "values": (
+            "flow": row wrap,
+        )
+    ),
+);
+
+@each $utility, $properties in $flex-properties {
+    $prefix: map-get($properties, "prefix");
+    $values: map-get($properties, "values");
+    
+    @each $key, $value in $values {
+      .#{$prefix}-#{$key} {
+        #{$utility}: $value;
+      }
+    }
+}
