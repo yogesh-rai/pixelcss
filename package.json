@@ -1,6 +1,6 @@
 {
   "name": "pixelcss",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple lightweight CSS framework",
   "main": "index.js",
   "scripts": {
