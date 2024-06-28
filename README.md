@@ -13,7 +13,7 @@
 
 ## Installation
 
-To install **Your Framework Name**, use npm:
+To install **PixelCSS**, use npm:
 
 ```bash
 npm install pixelcss
