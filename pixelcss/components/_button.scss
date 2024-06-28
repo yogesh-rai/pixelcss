@@ -18,7 +18,7 @@
 }
 
 .btn-outlined {
-    @include btn(white);
+    @include btn(transparent);
     border: $base-border-thickness solid black;
     &:hover {
         background-color: darken(#e2e2e2, 5);
@@ -36,7 +36,7 @@
     }
 
     .btn-outlined-#{$key} {
-        @include btn(#fff);
+        @include btn(transparent);
         border: $base-border-thickness solid $value;
         &:hover {
             background-color: $value;
